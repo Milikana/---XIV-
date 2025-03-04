@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Мой 🌊- это ты / XIV 🤍</title>
+</head>
+<body>
+    <div class="card">
+        <!-- Страница 1 -->
+        <div class="page page-1" onclick="flipPage(this)">
+            <img src="img/1.jpg" 
+                 class="content-image" 
+                 alt="Ваше фото">
+            <h1>Начало пути</h1>
+            <div class="heart">💑</div>
+        </div>
+
+        <!-- Страница 2 -->
+        <div class="page page-2" onclick="flipPage(this)">
+            <video src="img/norv.mp4" autoplay="true" muted="true" loop="true"
+                 class="content-image" 
+                 alt="Ваше фото"></video>
+            <h2>Совместные мечты</h2>
+            <div class="heart">✨</div>
+        </div>
+
+        <!-- Страница 3 -->
+        <div class="page page-3" onclick="flipPage(this)">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/1.jpg" alt="Фото 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/2.jpg" alt="Фото 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/3.jpg" alt="Фото 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/4.jpg" alt="Фото 4">
+                    </div>
+                </div>
+            </div>
+            <h2>Важные моменты</h2>
+            <div class="heart">💍</div>
+        </div>
+
+        <!-- Страница 4 - Расклад Таро -->
+        <div class="page page-4">
+            <h1>Расклад на брак</h1>
+            <div class="heart">バン</div>
+        </div>
+
+        <!-- Дополнительные страницы с картами -->
+        <div class="page page-5">
+            <h1>Расклад на брак 1</h1>
+            <div class="heart">筮</div>
+        </div>
+
+        <div class="page page-6">
+            <h1>Расклад на брак 2</h1>
+            <div class="heart">🌟</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5e6d3 0%, #ffe3e3 100%);
+  font-family: 'Comic Sans MS', cursive;
+  perspective: 2000px;
+}
+
+.card {
+  position: relative;
+  width: 90vmin;
+  height: 120vmin;
+  max-width: 600px;
+  max-height: 800px;
+  transform-style: preserve-3d;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff9f0;
+  border: 2px solid #e0d0c0;
+  padding: 5vmin;
+  transform-origin: left;
+  transition: transform 1s ease-in-out;
+  backface-visibility: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+  border-radius: 15px;
+}
+
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+.page-1 { z-index: 5; }
+.page-2 { z-index: 4; }
+.page-3 { z-index: 3; }
+.page-4 { z-index: 2; }
+.page-5 { z-index: 1; }
+
+h1 {
+  color: #c44;
+  font-size: 6vmin;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.heart {
+  font-size: 8vmin;
+  animation: heartbeat 1.5s infinite;
+  margin: 2vmin 0;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.content-image {
+  width: 100%;
+  height: 65vmin;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 3vmin;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.tarot-card {
+  width: 30vmin;
+  height: 45vmin;
+  background: #fff;
+  border: 2px solid #8B4513;
+  border-radius: 10px;
+  padding: 2vmin;
+  margin: 2vmin;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.tarot-card:hover {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .card {
+      width: 95vmin;
+      height: 130vmin;
+  }
+
+  h1 {
+      font-size: 8vmin;
+  }
+
+  .heart {
+      font-size: 10vmin;
+  }
+}
+
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  place-items: center;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto; /* Центрируем изображение */
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  height: 65vmin;
+  object-fit: cover;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 65vmin;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
